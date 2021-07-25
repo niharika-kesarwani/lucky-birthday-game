@@ -24,10 +24,12 @@ export default function App() {
     for (let digit of digits) {
       sum += digitsSum(digit);
     }
-    if (sum % Number(lucky) === 0) {
-      setResult("LUCKY!!!");
+    if (sum % Number(lucky) === 0 && date !== "") {
+      setResult("YAY!!! " + date + " is a Lucky Birthday!!!!");
+    } else if (Number(lucky) !== 0 && date !== "") {
+      setResult("OH-NO!!! " + date + " is not a Lucky Birthday!!!");
     } else {
-      setResult("UN-LUCKY!!!");
+      setResult("Enter a valid date and number!!");
     }
   }
 
@@ -41,22 +43,52 @@ export default function App() {
 
   return (
     <div className="App">
-      <input
-        type="date"
-        name="dateinput"
-        id="datei/p"
-        value={date}
-        onChange={assignDate}
-        className="datepicker"
-      />
+      <h1 className="header">LUCKY BIRTHDAY CALCULATOR</h1>
+      <p className="intro">
+        Play this game to see if your birthday is lucky or not!!!!
+      </p>
+      <table>
+        <tbody>
+          <tr>
+            <th>
+              <p className="datetext">Select your birthday: </p>
+            </th>
+            <th>
+              <input
+                type="date"
+                name="dateinput"
+                id="datei/p"
+                value={date}
+                onChange={assignDate}
+                className="datepicker"
+              />
+            </th>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <tbody>
+          <tr>
+            <th>
+              <p className="numtext">Enter your lucky number: </p>
+            </th>
+            <th>
+              <input
+                className="input"
+                type="number"
+                onChange={assignLucky}
+              ></input>
+            </th>
+          </tr>
+        </tbody>
+      </table>
       <p />
-      <input onChange={assignLucky}></input>
       <p />
-      <button onClick={calculate}>Calculate</button>
+      <button className="btn" onClick={calculate}>
+        CHECK
+      </button>
       <p />
-      <div>DOB {date}</div>
-      <div>Lucky {lucky}</div>
-      <div>Result {result}</div>
+      <div className="result">{result}</div>
     </div>
   );
 }

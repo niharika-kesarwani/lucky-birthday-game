@@ -1,4 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Jomolhari&display=swap");
+
 .App {
   font-family: sans-serif;
   text-align: center;
+  font-family: "Jomolhari", serif;
+  max-width: 750px;
+  margin: auto;
+  background-color: pink;
+}
+
+.header {
+  padding: 2rem 1rem;
+  color: blue;
+  font-weight: bold;
+}
+
+.intro {
+  padding: 0rem 1rem;
+  color: green;
+  font-size: large;
+}
+
+.datetext {
+  padding: 1rem;
+  margin-left: 12rem;
+}
+
+.datepicker {
+  padding: 0.5rem;
+  margin: 1rem 0rem;
+  background-color: lightsalmon;
+}
+
+.numtext {
+  margin: 0rem 1rem 0rem 11rem;
+}
+
+.input {
+  max-width: 150px;
+  margin: 0rem;
+  height: 30px;
+  background-color: lightsalmon;
+}
+
+.btn {
+  width: 130px;
+  height: 40px;
+  background-color: lightskyblue;
+  font-weight: bold;
+  font-size: large;
+  border-color: black;
+  margin-top: 2rem;
+}
+
+.result {
+  height: 50px;
+  width: 400px;
+  background-color: greenyellow;
+  text-align: center;
+  margin: 5rem 13rem;
+  padding-top: 1.5rem;
 }

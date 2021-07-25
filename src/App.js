@@ -1,43 +1,62 @@
+import "react-datepicker/dist/react-datepicker.css";
 import "./styles.css";
+import { React, useState } from "react";
 
 export default function App() {
-  const stringDigitSum = (string) => {
-    let digitSum = 0;
+  const [date, setDate] = useState("");
+  const [lucky, setLucky] = useState(0);
+  const [result, setResult] = useState("");
+
+  const digitsSum = (string) => {
+    let sum = 0;
 
     for (let digit of string) {
-      digitSum += Number(digit);
+      sum += Number(digit);
     }
-
-    return digitSum;
+    return sum;
   };
 
   function calculate() {
-    var birthDay = "24-04-1999";
-    var luckyNumber = 19;
-    let sumOfBirthDayDigits = 0;
-    var i = 0;
+    let sum = 0;
 
-    const digitStringArray = birthDay.split("-");
+    const digits = date.split("-");
 
-    for (let digitString of digitStringArray) {
-      sumOfBirthDayDigits += stringDigitSum(digitString);
-      console.log(i++, sumOfBirthDayDigits);
+    for (let digit of digits) {
+      sum += digitsSum(digit);
     }
-
-    console.log("sum", sumOfBirthDayDigits);
-    console.log("lucky", Number(luckyNumber));
-    if (sumOfBirthDayDigits % Number(luckyNumber) === 0) {
-      console.log("LUCKY!!!");
+    if (sum % Number(lucky) === 0) {
+      setResult("LUCKY!!!");
     } else {
-      console.log("UN-LUCKY!!!");
+      setResult("UN-LUCKY!!!");
     }
+  }
+
+  const assignDate = (e) => {
+    setDate(e.target.value);
+  };
+
+  function assignLucky(event) {
+    setLucky(event.target.value);
   }
 
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+      <input
+        type="date"
+        name="dateinput"
+        id="datei/p"
+        value={date}
+        onChange={assignDate}
+        className="datepicker"
+      />
+      <p />
+      <input onChange={assignLucky}></input>
+      <p />
       <button onClick={calculate}>Calculate</button>
+      <p />
+      <div>DOB {date}</div>
+      <div>Lucky {lucky}</div>
+      <div>Result {result}</div>
     </div>
   );
 }

@@ -10,13 +10,13 @@
 }
 
 .header {
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 1rem 1rem;
   color: blue;
   font-weight: bold;
 }
 
 .intro {
-  padding: 0rem 1rem;
+  padding: 0rem 0.5rem;
   color: green;
   font-size: large;
 }
@@ -50,14 +50,22 @@
   font-weight: bold;
   font-size: large;
   border-color: black;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 .result {
   height: 50px;
-  width: 400px;
+  width: 420px;
   background-color: greenyellow;
   text-align: center;
-  margin: 5rem 13rem;
-  padding-top: 1.5rem;
+  margin: 2.5rem 11rem 2rem 11rem;
+  padding-top: 1rem;
+  font-size: large;
+}
+
+.image {
+  height: 130px;
+  width: 150px;
+  object-fit: object-fit;
+  margin-bottom: 1rem;
 }

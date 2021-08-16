@@ -58,8 +58,13 @@ export default function App() {
     setLucky(event.target.value);
   }
 
+  function buttonHandler() {}
+
   return (
     <div className="App">
+      <button class="notice" onclick={buttonHandler}>
+        NOTICE :- We are not storing your data
+      </button>
       <h1 className="header">LUCKY BIRTHDAY CALCULATOR</h1>
       <p className="intro">
         Play this game to see if your birthday is lucky or not!!!!

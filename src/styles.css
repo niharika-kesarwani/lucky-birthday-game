@@ -9,8 +9,17 @@
   background-color: pink;
 }
 
+.notice {
+  text-align: center;
+  width: 50em;
+  height: 2rem;
+  margin-top: 1rem;
+  background-color: greenyellow;
+  border-style: none;
+}
+
 .header {
-  padding: 2rem 1rem 1rem 1rem;
+  padding: 0rem 1rem 0rem 1rem;
   color: blue;
   font-weight: bold;
 }
@@ -22,7 +31,7 @@
 }
 
 .datetext {
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   margin-left: 12rem;
 }
 
@@ -50,7 +59,7 @@
   font-weight: bold;
   font-size: large;
   border-color: black;
-  margin-top: 1.5rem;
+  margin-top: 1.25rem;
 }
 
 .result {

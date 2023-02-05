@@ -2,6 +2,12 @@ import "react-datepicker/dist/react-datepicker.css";
 import "./styles.css";
 import { React, useState } from "react";
 
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+library.add(fab);
+
 export default function App() {
   const [date, setDate] = useState("");
   const [lucky, setLucky] = useState(0);
@@ -112,6 +118,56 @@ export default function App() {
       <p />
       <div className="result">{result}</div>
       <img src={imgURL} className="image" alt=""></img>
+
+      <footer className="footer">
+        <div className="footer-header">connect with me</div>
+        <ul className="footer-ul-links">
+          <li className="lists-item-inline">
+            <a
+              className="footer-links"
+              href="https://linkedin.com/in/niharika-kesarwani"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <FontAwesomeIcon className="icons" icon={["fab", "linkedin"]} />
+              LinkedIn
+            </a>
+          </li>
+          <li className="lists-item-inline">
+            <a
+              className="footer-links"
+              href="https://github.com/NiharikaNeha"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <FontAwesomeIcon className="icons" icon={["fab", "github"]} />
+              GitHub
+            </a>
+          </li>
+          <li className="lists-item-inline">
+            <a
+              className="footer-links"
+              href="https://twitter.com/Niharika_twt"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <FontAwesomeIcon className="icons" icon={["fab", "twitter"]} />
+              Twitter
+            </a>
+          </li>
+          <li className="lists-item-inline">
+            <a
+              className="footer-links"
+              href="https://niharikakesarwani.netlify.app/"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <FontAwesomeIcon className="icons" icon={["fab", "dribbble"]} />
+              Website
+            </a>
+          </li>
+        </ul>
+      </footer>
     </div>
   );
 }
